@@ -1,28 +1,99 @@
 // NAV
 
+// Выпадающее меню - бургер
+
+let burger = document.querySelector('.nav__burger');
+let menuList = document.querySelector('.main-menu__list');
+
+const toggleMenuList = () => {
+  menuList.classList.toggle('open');
+  burger.classList.toggle('active');
+
+  menuSrch.classList.remove('open');
+  search.classList.remove('active');
+  menuSett.classList.remove('open');
+  settings.classList.remove('active');
+}
+
+burger.addEventListener('click', e => {
+  e.stopPropagation();
+
+  toggleMenuList();
+});
+
+document.addEventListener('click', e => {
+  let target = e.target;
+  let its_menu = target == menuList || menuList.contains(target);
+  let its_hamburger = target == burger;
+  let menu_is_active = menuList.classList.contains('open');
+  
+  if (!its_menu && !its_hamburger && menu_is_active) {
+    toggleMenuList();
+  }
+})
+
 // Выпадающее меню - настройки
 
-let dropMenuSett = document.querySelector('.nav__settings-menu');
-let btnMenuSett = document.querySelector('.nav__settings');
+let settings = document.querySelector('.nav__settings');
+let menuSett = document.querySelector('.nav__settings-menu');
 
-btnMenuSett.addEventListener('click', function(e) {
-  dropMenuSett.classList.toggle('open');
-  btnMenuSett.classList.toggle('active');
+const toggleMenuSet = () => {
+  menuSett.classList.toggle('open');
+  settings.classList.toggle('active');
+
+  menuSrch.classList.remove('open');
+  search.classList.remove('active');
+  menuList.classList.remove('open');
+  burger.classList.remove('active');
+}
+
+settings.addEventListener('click', e => {
+  e.stopPropagation();
+
+  toggleMenuSet();
 });
 
-let dropMenuSrch = document.querySelector('.nav__search-menu');
-let btnMenuSrch = document.querySelector('.nav__search');
-
-btnMenuSrch.addEventListener('click', function(e) {
-  dropMenuSrch.classList.toggle('open');
-  btnMenuSrch.classList.toggle('active');
-});
-
-let dropMenuList = document.querySelector('.main-menu__list');
-let btnMenuList = document.querySelector('.nav__burger');
-
-btnMenuList.addEventListener('click', function(e) {
-  dropMenuList.classList.toggle('open');
-  btnMenuList.classList.toggle('active');
+document.addEventListener('click', e => {
+  let target = e.target;
+  let its_menu = target == menuSett || menuSett.contains(target);
+  let its_hamburger = target == settings;
+  let menu_is_active = menuSett.classList.contains('open');
+  
+  if (!its_menu && !its_hamburger && menu_is_active) {
+    toggleMenuSet();
+  }
 })
+
+// Выпадающее меню - поиск
+
+let search = document.querySelector('.nav__search');
+let menuSrch = document.querySelector('.nav__search-menu');
+
+const toggleMenuSrch = () => {
+  menuSrch.classList.toggle('open');
+  search.classList.toggle('active');
+
+  menuSett.classList.remove('open');
+  settings.classList.remove('active');
+  menuList.classList.remove('open');
+  burger.classList.remove('active');
+}
+
+search.addEventListener('click', e => {
+  e.stopPropagation();
+
+  toggleMenuSrch();
+});
+
+document.addEventListener('click', e => {
+  let target = e.target;
+  let its_menu = target == menuSrch || menuSrch.contains(target);
+  let its_hamburger = target == search;
+  let menu_is_active = menuSrch.classList.contains('open');
+  
+  if (!its_menu && !its_hamburger && menu_is_active) {
+    toggleMenuSrch();
+  }
+})
+
 
