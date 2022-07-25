@@ -292,7 +292,7 @@ a {
 }
 .nav__icons {
   display: flex;
-  flex: 0 1 15%;
+  flex: 0 1 10%;
   justify-content: flex-end;
 }
 .nav__settings {
