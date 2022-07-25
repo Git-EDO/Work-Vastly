@@ -219,7 +219,7 @@ a {
   position: relative;
 }
 .grid-item-tags::before {
-  content: url(/img/grid-item/hash-icon.svg);
+  content: url(../img/grid-item/hash-icon.svg);
   position: absolute;
   top: 7px;
   left: 0px;
@@ -236,7 +236,7 @@ a {
   padding-left: 14px;
 }
 .grid-item-author::before {
-  content: url(/img/grid-item/user-icon.svg);
+  content: url(../img/grid-item/user-icon.svg);
   position: absolute;
   top: 7px;
   left: 0px;
