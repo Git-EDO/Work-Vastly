@@ -3,23 +3,21 @@
 // Выпадающее меню - бургер
 
 let burger = document.querySelector('.nav__burger');
-let menuList = document.querySelector('.main-menu__list');
+let menuList = document.querySelector('.main-drop-menu');
+let body = document.querySelector('body');
 
 const toggleMenuList = () => {
   menuList.classList.toggle('open');
   burger.classList.toggle('active');
-
-  menuSrch.classList.remove('open');
-  search.classList.remove('active');
-  menuSett.classList.remove('open');
-  settings.classList.remove('active');
+  body.classList.toggle('lock')
 }
-
-burger.addEventListener('click', e => {
-  e.stopPropagation();
-
-  toggleMenuList();
-});
+if (burger) {
+  burger.addEventListener('click', e => {
+    e.stopPropagation();
+  
+    toggleMenuList();
+  })
+}
 
 document.addEventListener('click', e => {
   let target = e.target;
@@ -30,70 +28,92 @@ document.addEventListener('click', e => {
   if (!its_menu && !its_hamburger && menu_is_active) {
     toggleMenuList();
   }
-})
-
-// Выпадающее меню - настройки
-
-let settings = document.querySelector('.nav__settings');
-let menuSett = document.querySelector('.nav__settings-menu');
-
-const toggleMenuSet = () => {
-  menuSett.classList.toggle('open');
-  settings.classList.toggle('active');
-
-  menuSrch.classList.remove('open');
-  search.classList.remove('active');
-  menuList.classList.remove('open');
-  burger.classList.remove('active');
-}
-
-settings.addEventListener('click', e => {
-  e.stopPropagation();
-
-  toggleMenuSet();
 });
 
-document.addEventListener('click', e => {
-  let target = e.target;
-  let its_menu = target == menuSett || menuSett.contains(target);
-  let its_hamburger = target == settings;
-  let menu_is_active = menuSett.classList.contains('open');
-  
-  if (!its_menu && !its_hamburger && menu_is_active) {
-    toggleMenuSet();
-  }
-})
+// POPUPS
 
-// Выпадающее меню - поиск
+// POPUP - Avatar
 
-let search = document.querySelector('.nav__search');
-let menuSrch = document.querySelector('.nav__search-menu');
+let avatarOpen = document.querySelector('.avatar-button');
+let avatarClose = document.querySelector('.avatar-confirm-btn');
 
-const toggleMenuSrch = () => {
-  menuSrch.classList.toggle('open');
-  search.classList.toggle('active');
+if(avatarOpen) {
+  avatarOpen.addEventListener('click', function(e) {
+    e.preventDefault();
+    let avatarPopup = document.querySelector('.popup-avatar-chng');
+    let avatarPopupBody = document.querySelector('.popup-body-avatar');
+    avatarPopup.classList.add('open');
+    avatarPopupBody.classList.add('open');
+  });
+}
+if(avatarClose) {
+  avatarClose.addEventListener('click', function(e) {
+    e.preventDefault();
+    let avatarPopup = document.querySelector('.popup-avatar-chng');
+    let avatarPopupBody = document.querySelector('.popup-body-avatar');
+    avatarPopup.classList.remove('open');
+    avatarPopupBody.classList.remove('open');
+  });
+}
+// Скролл страницы
 
-  menuSett.classList.remove('open');
-  settings.classList.remove('active');
-  menuList.classList.remove('open');
-  burger.classList.remove('active');
+let mainScroll = document.querySelector('.main-btn');
+
+if(mainScroll){
+  mainScroll.addEventListener('click', function(e) {
+    e.preventDefault();
+    let main = document.querySelector('.section-title');
+    main.scrollIntoView({block: "start", behavior: "smooth"});
+  });
 }
 
-search.addEventListener('click', e => {
-  e.stopPropagation();
+let headerScroll = document.querySelector('.logo-link');
 
-  toggleMenuSrch();
-});
+if(headerScroll){
+  headerScroll.addEventListener('click', function(e) {
+    e.preventDefault();
+    let main = document.querySelector('main');
+    main.scrollIntoView({block: "start", behavior: "smooth"});
+  });
+}
 
-document.addEventListener('click', e => {
-  let target = e.target;
-  let its_menu = target == menuSrch || menuSrch.contains(target);
-  let its_hamburger = target == search;
-  let menu_is_active = menuSrch.classList.contains('open');
-  
-  if (!its_menu && !its_hamburger && menu_is_active) {
-    toggleMenuSrch();
-  }
-})
+let footerScroll = document.querySelector('.footer-link');
 
+if(footerScroll) {
+  footerScroll.addEventListener('click', function(e) {
+    e.preventDefault();
+    let main = document.querySelector('main');
+    main.scrollIntoView({block: "start", behavior: "smooth"});
+  });
+}
 
+// Количество миров
+
+let worlds = document.querySelectorAll('.worlds-grid-item');
+
+// Управление формой регистрации
+
+let regSwitch = document.querySelector('.register-switch');
+
+if(regSwitch) {
+  regSwitch.addEventListener('click', function(e){
+    let signUpBody = document.querySelector('.register-body');
+    signUpBody.classList.add('active');
+    let signInBody = document.querySelector('.sign-in-body');
+    signInBody.classList.add('inactive');
+    let regForm =document.querySelector('.registration-form');
+    regForm.classList.add('registration');
+  })
+}
+let signSwitch = document.querySelector('.sign-in-switch');
+
+if(signSwitch) {
+  signSwitch.addEventListener('click', function(e){
+    let signUpBody = document.querySelector('.register-body');
+    signUpBody.classList.remove('active');
+    let signInBody = document.querySelector('.sign-in-body');
+    signInBody.classList.remove('inactive');
+    let regForm =document.querySelector('.registration-form');
+    regForm.classList.remove('registration');
+  })
+}
