@@ -35,26 +35,34 @@ document.addEventListener('click', e => {
 // POPUP - Avatar
 
 let avatarOpen = document.querySelector('.avatar-button');
-let avatarClose = document.querySelector('.avatar-confirm-btn');
 
-if(avatarOpen) {
-  avatarOpen.addEventListener('click', function(e) {
-    e.preventDefault();
-    let avatarPopup = document.querySelector('.popup-avatar-chng');
-    let avatarPopupBody = document.querySelector('.popup-body-avatar');
-    avatarPopup.classList.add('open');
-    avatarPopupBody.classList.add('open');
-  });
+
+// if(avatarOpen) {
+//   avatarOpen.addEventListener('click', function(e) {
+//     e.preventDefault();
+//     let avatarPopup = document.querySelector('.popup-avatar-chng');
+//     let avatarPopupBody = document.querySelector('.popup-body-avatar');
+//     avatarPopup.classList.add('open');
+//     avatarPopupBody.classList.add('open');
+//   });
+// }
+
+function closePopup() {
+  let popups = document.querySelectorAll('.popup');
+  let popupsBody = document.querySelectorAll('.popup-body');
+
+  for(i = 0; i < popups.length; i++) {
+    let popup = popups[i];
+    popup.classList.remove('open');
+  }
+  for(i = 0; i < popupsBody.length; i++) {
+    let popupBody = popupsBody[i];
+    popupBody.classList.remove('open');
+  }
 }
-if(avatarClose) {
-  avatarClose.addEventListener('click', function(e) {
-    e.preventDefault();
-    let avatarPopup = document.querySelector('.popup-avatar-chng');
-    let avatarPopupBody = document.querySelector('.popup-body-avatar');
-    avatarPopup.classList.remove('open');
-    avatarPopupBody.classList.remove('open');
-  });
-}
+
+
+
 // Скролл страницы
 
 let mainScroll = document.querySelector('.main-btn');
@@ -116,4 +124,29 @@ if(signSwitch) {
     let regForm =document.querySelector('.registration-form');
     regForm.classList.remove('registration');
   })
+}
+
+// Управление выпадающими формами настроек при входе в World
+
+function showVideo(anything) {
+  document.querySelector('.video-textBox').value = anything;
+}
+
+let dropDownVideo = document.querySelector('.video-dropdown');
+if(dropDownVideo) {
+  dropDownVideo.onclick = function() {
+    dropDownVideo.classList.toggle('active')
+  };
+}
+
+function showAudio(anything) {
+  document.querySelector('.audio-textBox').value = anything;
+}
+
+let dropDownAudio = document.querySelector('.audio-dropdown');
+
+if(dropDownAudio) {
+  dropDownAudio.onclick = function() {
+    dropDownAudio.classList.toggle('active')
+  };
 }

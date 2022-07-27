@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./css/normalize.css">
+  <link rel="stylesheet" href="./css/styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;700&display=swap" rel="stylesheet">
+  <title>Vastly</title>
+</head>
+<body>
+  <header class="header">
+    <nav class="nav settings-nav">
+      <div class="nav__logo">
+        <a href="#" class="logo-link">
+          Vastly
+        </a>
+      </div>
+    </nav>
+  </header>
+  <div class="bg">
+    <div class="user-settings">
+      <div class="user-settings-body">
+        <div class="settings-section settings-first-section">
+          <div class="settings-camera">
+            <img src="./img/settings/camera.jpg" alt="">
+          </div>
+          <div class="settings-name">
+            <div class="data-input set-input">
+              <input type="text" class="input settings-name-input" placeholder=" ">
+              <label class="input-label set-input-label" for="">Name</label>
+            </div>
+          </div>
+          <div class="settings-avatar">
+            <img src="./img/settings/avatar.jpg" alt="">
+          </div>
+        </div>
+        <div class="settings-section settings-second-section">
+          <div class="video-settings">
+            <label for="">
+              Video
+            </label>
+            <div class="dropdown video-dropdown">
+              <input type="text" class="video-textBox" placeholder="Default device" readonly>
+              <div class="options">
+                <div onclick="showVideo('Device 1')">Device 1</div>
+                <div onclick="showVideo('Device 2')">Device 2</div>
+                <div onclick="showVideo('Device 3')">Device 3</div>
+              </div>
+            </div>
+          </div>
+          <div class="audio-settings">
+            <label for="">
+              Audio
+            </label>
+            <div class="dropdown audio-dropdown">
+              <input type="text" class="audio-textBox" placeholder="Default device" readonly>
+              <div class="options">
+                <div onclick="showAudio('Device 1')">Device 1</div>
+                <div onclick="showAudio('Device 2')">Device 2</div>
+                <div onclick="showAudio('Device 3')">Device 3</div>
+              </div>
+            </div>
+          </div>
+          <div class="audio-extra-settings">
+            <div class="audio-extra-checkbox">
+              <label for="gain" class="checkbox-label">Auto gain</label>
+              <input id="gain" type="checkbox" class="checkbox extra-checkbox">
+            </div>
+            <div class="audio-extra-checkbox">
+              <label for="echo" class="checkbox-label">Echo</label>
+              <input id="echo" type="checkbox" class="checkbox extra-checkbox">
+            </div>
+            <div class="audio-extra-checkbox">
+              <label for="noise" class="checkbox-label">Noise</label>
+              <input id="noise" type="checkbox" class="checkbox extra-checkbox">
+            </div>
+          </div>
+          <div class="button user-settings-button">
+            <a href="#" class="btn user-settings-btn"><span>Enter the World</span></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="./js/script.js"></script>
+</body>
+</html>
