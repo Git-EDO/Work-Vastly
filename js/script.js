@@ -1,68 +1,3 @@
-// NAV
-
-// Выпадающее меню - бургер
-
-let burger = document.querySelector('.nav__burger');
-let menuList = document.querySelector('.main-drop-menu');
-let body = document.querySelector('body');
-
-const toggleMenuList = () => {
-  menuList.classList.toggle('open');
-  burger.classList.toggle('active');
-  body.classList.toggle('lock')
-}
-if (burger) {
-  burger.addEventListener('click', e => {
-    e.stopPropagation();
-  
-    toggleMenuList();
-  })
-}
-
-document.addEventListener('click', e => {
-  let target = e.target;
-  let its_menu = target == menuList || menuList.contains(target);
-  let its_hamburger = target == burger;
-  let menu_is_active = menuList.classList.contains('open');
-  
-  if (!its_menu && !its_hamburger && menu_is_active) {
-    toggleMenuList();
-  }
-});
-
-// POPUPS
-
-// POPUP - Avatar
-
-let avatarOpen = document.querySelector('.avatar-button');
-
-
-// if(avatarOpen) {
-//   avatarOpen.addEventListener('click', function(e) {
-//     e.preventDefault();
-//     let avatarPopup = document.querySelector('.popup-avatar-chng');
-//     let avatarPopupBody = document.querySelector('.popup-body-avatar');
-//     avatarPopup.classList.add('open');
-//     avatarPopupBody.classList.add('open');
-//   });
-// }
-
-function closePopup() {
-  let popups = document.querySelectorAll('.popup');
-  let popupsBody = document.querySelectorAll('.popup-body');
-
-  for(i = 0; i < popups.length; i++) {
-    let popup = popups[i];
-    popup.classList.remove('open');
-  }
-  for(i = 0; i < popupsBody.length; i++) {
-    let popupBody = popupsBody[i];
-    popupBody.classList.remove('open');
-  }
-}
-
-
-
 // Скролл страницы
 
 let mainScroll = document.querySelector('.main-btn');
@@ -150,3 +85,98 @@ if(dropDownAudio) {
     dropDownAudio.classList.toggle('active')
   };
 }
+
+function showRooms(anything) {
+  document.querySelector('.rooms-textBox').value = anything;
+}
+
+let dropDownRooms = document.querySelector('.rooms-dropdown');
+
+if(dropDownRooms) {
+  dropDownRooms.onclick = function() {
+    dropDownRooms.classList.toggle('active')
+  };
+}
+
+// Изменение кнопки копирования приглашающей ссылки
+
+let copyBtns = document.querySelectorAll('.link-copy span');
+
+for (i=0; i<copyBtns.length; i++) {
+  copyBtn = copyBtns[i];
+  copyBtn.addEventListener('click', function(e) {
+    copyBtn.innerHTML = "Link copied!";
+    copyBtn.closest('.btn').classList.add('copied');
+    e.preventDefault();
+  })
+}
+
+// Master settings
+
+let masterBtns = document.querySelectorAll('.master-settings');
+
+for (i=0; i < masterBtns.length; i++) {
+  masterBtn = masterBtns[i];
+  masterBtn.addEventListener('click', function(e){
+    let masterContents = document.querySelectorAll('.master-buttons');
+    for (i=0; i < masterBtns.length; i++) {
+      masterContent = masterContents[i];
+    }
+    masterContent.classList.toggle('active');
+    masterBtn.classList.toggle('active');
+  })
+}
+
+let microOff = document.querySelector('.micro');
+
+if (microOff) {
+  microOff.addEventListener('click', function(){
+    microOff.classList.toggle('off');
+  })
+}
+
+let cameraOff = document.querySelector('.camera');
+
+if (cameraOff) {
+  cameraOff.addEventListener('click', function(){
+    cameraOff.classList.toggle('off');
+  })
+}
+
+// Скрытие интерфейса внутри мира
+
+let hideInterface = document.querySelector('.hide');
+
+if(hideInterface) {
+  hideInterface.addEventListener('click', function(){
+    hideInterface.classList.toggle('hidden')
+    let interfaceCamera = document.querySelector('.interface-camera');
+    interfaceCamera.classList.toggle('hidden');
+    let interfaceChat = document.querySelector('.interface-chat');
+    interfaceChat.classList.toggle('hidden');
+  })
+}
+
+
+// Слайдер главной страницы
+
+let menu = ['Templates', "Worlds", 'NFTs']
+const swiper = new Swiper('.swiper', {
+  // Optional parameters
+  direction: 'horizontal',
+  loop: true,
+  initialSlide: 1,
+
+  // If we need pagination
+  pagination: {
+    el: '.swiper-pagination',
+    clickable: true,
+    dynamicBullets: true,
+    renderBullet: function (index, className) {
+      return '<span class="' + className + '">' + (menu[index]) + '</span>';
+  }
+}
+
+});
+
+Swiper.slideTo(2,false,false);

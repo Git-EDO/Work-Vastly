@@ -18,7 +18,7 @@
             Vastly
           </a>
         </div>
-        <div class="nav__menu">
+        <div class="nav__menu" style="display: none;">
           <ul class="menu__list">
             <li><a href="./index.html">Worlds</a></li>
             <li><a href="#">Templates</a></li>
@@ -67,16 +67,16 @@
               </div>
             </div>
           </div>
-          <div class="nav__burger nav-icon">
+          <!-- <div class="nav__burger nav-icon">
             <div class="burger-icon">
               <span></span>
             </div>
-          </div>
+          </div> -->
         </div>
       </nav>
     </header>
     <main class="main">
-      <div class="start-section">
+      <div class="start-section" style="display:none">
         <div class="start-section-body">
           <div class="main-title">
             <h1>Vastly</h1>
@@ -93,7 +93,7 @@
         </div>
       </div>
       <div class="container main-container">
-        <div class="section-title">
+        <div class="section-title unlogin-section-title">
           <h2>Choose your Metaworld</h2>
         </div>
         <div class="section-subtitle">
@@ -113,16 +113,16 @@
           </div>
           <div class="search-radio">
             <div class="search-radio-item">
-              <input type="radio" class="search-radio-input" id="radio-names" name="search-parameters" checked>
-              <label for="radio-names" class="search-radio-label">Name</label>
+              <input type="radio" class="search-radio-input" id="login-radio-names" name="login-search-parameters" checked>
+              <label for="login-radio-names" class="search-radio-label">Name</label>
             </div>
             <div class="search-radio-item">
-              <input type="radio" class="search-radio-input" id="radio-tag" name="search-parameters">
-              <label for="radio-tag" class="search-radio-label">Tag</label>
+              <input type="radio" class="search-radio-input" id="login-radio-tag" name="login-search-parameters">
+              <label for="login-radio-tag" class="search-radio-label">Tag</label>
             </div>
             <div class="search-radio-item">
-              <input type="radio" class="search-radio-input" id="radio-author" name="search-parameters">
-              <label for="radio-author" class="search-radio-label">Author</label>
+              <input type="radio" class="search-radio-input" id="login-radio-author" name="login-search-parameters">
+              <label for="login-radio-author" class="search-radio-label">Author</label>
             </div>
           </div>
         </div>
@@ -605,7 +605,7 @@
         </div>
       </div>
     </main>
-    <div class="drop-menus">
+    <!-- <div class="drop-menus">
       <div class="main-drop-menu drop-menu">
         <ul class="main-menu__list">
           <li>
@@ -642,10 +642,17 @@
           </div>
         </div>
       </div>
-    </div>
+    </div> -->
     <div class="popups">
       <div class="popup popup-password-chng">
         <div class="popup-body">
+          <div class="popup-header">
+            <div class="loading-title">
+              Changing password
+            </div>
+            <div class="close-popup">
+            </div>
+          </div>
           <div class="data-input data-input-password-chng">
             <input type="password" class="input" placeholder=" ">
             <label class="input-label" for="">New password</label>
@@ -654,18 +661,25 @@
             <input type="password" class="input" placeholder=" ">
             <label class="input-label" for="">Confirm password</label>
           </div>
-          <div class="button password-chng-button">
-            <a href="#" class="btn password-chng-btn"><span>OK</span></a>
-          </div>
-          <div class="button password-chng-button">
-            <a href="#" class="btn password-chng-btn popup-close"><span>Cancel</span></a>
+          <div class="button popup-button password-chng-button">
+            <a href="#" class="btn popup-btn password-chng-btn"><span>OK</span></a>
           </div>
         </div>
       </div>
       <div class="popup popup-avatar-chng">
         <div id="avatar" class="popup-body popup-body-avatar">
+          <div class="popup-header">
+            <div class="loading-title">
+              Test your avatar
+            </div>
+            <div class="close-popup">
+            </div>
+          </div>
           <div class="avatar-control">
             <div class="avatar-body">
+              <a href="#">
+                <img src="./img/grid-avatars/ava3.jpg" alt="">
+              </a>
             </div>
             <div class="avatar-actions">
               <div class="avatar-checkbox">
@@ -684,23 +698,45 @@
                 <label for="" class="checkbox-label">Interact</label>
                 <input type="checkbox" class="checkbox">
               </div>
+              <div class="avatar-checkbox">
+                <label for="" class="checkbox-label">Interact</label>
+                <input type="checkbox" class="checkbox">
+              </div>
+              <div class="avatar-checkbox">
+                <label for="" class="checkbox-label">Interact</label>
+                <input type="checkbox" class="checkbox">
+              </div>
+              <div class="avatar-checkbox">
+                <label for="" class="checkbox-label">Interact</label>
+                <input type="checkbox" class="checkbox">
+              </div>
+              <div class="avatar-checkbox">
+                <label for="" class="checkbox-label">Interact</label>
+                <input type="checkbox" class="checkbox">
+              </div>
+              <div class="avatar-checkbox">
+                <label for="" class="checkbox-label">Interact</label>
+                <input type="checkbox" class="checkbox">
+              </div>
+              <div class="avatar-checkbox">
+                <label for="" class="checkbox-label">Interact</label>
+                <input type="checkbox" class="checkbox">
+              </div>
             </div>
           </div>
           <div class="button avatar-chng-button">
             <a href="#" class="btn avatar-chng-btn"><span>Change avatar</span></a>
           </div>
-          <div class="button avatar-chng-button">
-            <a href="#" class="btn avatar-chng-btn avatar-confirm-btn"><span>OK</span></a>
-          </div>
         </div>
       </div>
       <div class="popup popup-avatar-select">
         <div class="popup-body popup-body-avatar-select">
-          <div class="section-title avatar-section-title">
-            <h2>Choose your Meta-Avatar</h2>
-          </div>
-          <div class="section-subtitle avatar-section-subtitle">
-            <p>Join amazing Metaverse spaces</p>
+          <div class="popup-header">
+            <div class="loading-title">
+              Choose your Meta avatar
+            </div>
+            <div class="close-popup">
+            </div>
           </div>
           <div class="grid-search avatar-grid-search">
             <div class="search-ico">
@@ -963,19 +999,188 @@
       </div>
       <div class="popup popup-enter-world">
         <div class="popup-body">
+          <div class="popup-header">
+            <div class="loading-title">
+              Meta World
+            </div>
+            <div class="close-popup">
+            </div>
+          </div>
           <div class="enter-world-title">
             <span>20 actors demo</span>
           </div>
           <div class="enter-world-preview">
-          </div>
-          <div class="button enter-world-button">
-            <a href="#" class="btn enter-world-btn"><span>Enter</span></a>
+            <img src="./img/grid-worlds/img7.jpg" alt="">
+            <div class="preview-enter">
+              <a href="#">
+                <img src="./img/start-world.svg" alt="">
+              </a>
+            </div>
           </div>
           <div class="button enter-world-button">
             <a href="#" class="btn enter-world-btn"><span>Convert to template</span></a>
           </div>
           <div class="button enter-world-button">
-            <a href="#" class="btn enter-world-btn"><span>Get guest link</span></a>
+            <a href="#" class="btn enter-world-btn link-copy"><span>Get guest link</span></a>
+          </div>
+        </div>
+      </div>
+      <div class="popup popup-enter-world-master">
+        <div class="popup-body popup-body-master">
+          <div class="popup-header">
+            <div class="loading-title">
+              Meta World
+            </div>
+            <div class="master-settings">
+            </div>
+            <div class="close-popup">
+            </div>
+          </div>
+          <div class="enter-world-title">
+            <span>20 actors demo</span>
+          </div>
+          <div class="enter-world-preview">
+            <img src="./img/grid-worlds/img7.jpg" alt="">
+            <div class="preview-enter">
+              <a href="#">
+                <img src="./img/start-world.svg" alt="">
+              </a>
+            </div>
+          </div>
+          <div class="button enter-world-button">
+            <a href="#" class="btn enter-world-btn"><span>Convert to template</span></a>
+          </div>
+          <div class="button enter-world-button">
+            <a href="#" class="btn enter-world-btn link-copy"><span>Get guest link</span></a>
+          </div>
+          <div class="enter-world-master-buttons master-buttons">
+            <div class="button enter-world-button">
+              <a href="#" class="btn enter-world-btn link-copy"><span>Edit properties</span></a>
+            </div>
+            <div class="button enter-world-button">
+              <a href="#" class="btn enter-world-btn link-copy"><span>Update from template</span></a>
+            </div>
+            <div class="button enter-world-button">
+              <a href="#" class="btn enter-world-btn link-copy"><span>Set preview</span></a>
+            </div>
+            <div class="button enter-world-button">
+              <a href="#" class="btn enter-world-btn link-copy"><span>Disable quest link</span></a>
+            </div>
+            <div class="button enter-world-button">
+              <a href="#" class="btn enter-world-btn link-copy"><span>Delete</span></a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="popup popup-inside-settings">
+        <div class="popup-body popup-body-inside-settings">
+          <div class="popup-header">
+            <div class="loading-title">
+              Settings
+            </div>
+            <div class="micro">
+              <img src="./img/micro-ico.svg" alt="">
+            </div>
+            <div class="camera">
+              <img src="./img/camera-ico.svg" alt="">
+            </div>
+            <div class="master-settings" style="display: none">
+            </div>
+            <div class="close-popup">
+            </div>
+          </div>
+          <div class="button inside-settings-button">
+            <a href="#" class="btn inside-settings-btn"><span>Respawn</span></a>
+          </div>
+          <div class="button inside-settings-button">
+            <a href="#" class="btn inside-settings-btn link-copy"><span>Get guest link</span></a>
+          </div>
+          <div class="button inside-settings-button">
+            <a href="#" class="btn inside-settings-btn"><span>Change room</span></a>
+          </div>
+          <div class="button inside-settings-button">
+            <a href="#" class="btn inside-settings-btn"><span>Configure communications</span></a>
+          </div>
+          <div class="button inside-settings-button">
+            <a href="#" class="btn inside-settings-btn"><span>Leave world</span></a>
+          </div>
+          <div class="inside-settings-master-buttons master-buttons">
+            <div class="button inside-settings-button">
+              <a href="#" class="btn inside-settings-btn"><span>License info</span></a>
+            </div>
+            <div class="button inside-settings-button">
+              <a href="#" class="btn inside-settings-btn"><span>Room logs</span></a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="popup popup-inside-settings-master">
+        <div class="popup-body popup-body-inside-settings">
+          <div class="popup-header">
+            <div class="loading-title">
+              Settings
+            </div>
+            <div class="micro">
+              <img src="./img/micro-ico.svg" alt="">
+            </div>
+            <div class="camera">
+              <img src="./img/camera-ico.svg" alt="">
+            </div>
+            <div class="master-settings">
+            </div>
+            <div class="close-popup">
+            </div>
+          </div>
+          <div class="button inside-settings-button">
+            <a href="#" class="btn inside-settings-btn"><span>Respawn</span></a>
+          </div>
+          <div class="button inside-settings-button">
+            <a href="#" class="btn inside-settings-btn link-copy"><span>Get guest link</span></a>
+          </div>
+          <div class="button inside-settings-button">
+            <a href="#" class="btn inside-settings-btn"><span>Change room</span></a>
+          </div>
+          <div class="button inside-settings-button">
+            <a href="#" class="btn inside-settings-btn"><span>Configure communications</span></a>
+          </div>
+          <div class="button inside-settings-button">
+            <a href="#" class="btn inside-settings-btn"><span>Leave world</span></a>
+          </div>
+          <div class="inside-settings-master-buttons master-buttons">
+            <div class="button inside-settings-button">
+              <a href="#" class="btn inside-settings-btn"><span>License info</span></a>
+            </div>
+            <div class="button inside-settings-button">
+              <a href="#" class="btn inside-settings-btn"><span>Room logs</span></a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="popup popup-change-room">
+        <div class="popup-body popup-body-change-room">
+          <div class="popup-header">
+            <div class="loading-title">
+              Select room
+            </div>
+            <div class="close-popup">
+            </div>
+          </div>
+          <div class="dropdown rooms-dropdown">
+            <input type="text" class="rooms-textBox" placeholder="Default room" readonly>
+            <div class="options">
+              <div onclick="showRooms('Room 1')">Room 1</div>
+              <div onclick="showRooms('Room 2')">Room 2</div>
+              <div onclick="showRooms('Room 3')">Room 3</div>
+              <div onclick="showRooms('Room 1')">Room 1</div>
+              <div onclick="showRooms('Room 2')">Room 2</div>
+              <div onclick="showRooms('Room 3')">Room 3</div>
+              <div onclick="showRooms('Room 1')">Room 1</div>
+              <div onclick="showRooms('Room 2')">Room 2</div>
+              <div onclick="showRooms('Room 3')">Room 3</div>
+            </div>
+          </div>
+          <div class="button inside-settings-button">
+            <a href="#" class="btn inside-settings-btn"><span>Enter room</span></a>
           </div>
         </div>
       </div>
