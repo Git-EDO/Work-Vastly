@@ -1008,6 +1008,11 @@ transition: 0.5s ease;
 
 /* === PASSWORD CHANGING === */
 
+.popup-body-password-chng {
+  justify-content: center;
+  padding-top: 70px;
+  min-height: 250px;
+}
 .data-input-password-chng {
   width: 100%;
 }
