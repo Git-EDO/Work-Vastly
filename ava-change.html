@@ -7,7 +7,7 @@
   <link rel="stylesheet" href="./css/normalize.css">
   <link rel="stylesheet" href="./css/swiper-bundle.min.css">
   <link rel="stylesheet" href="./css/styles.css">
-  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
   <title>Vastly</title>
 </head>
 <body>
@@ -1664,8 +1664,8 @@
       </div>
     </div> -->
     <div class="popups">
-      <div class="popup popup-password-chng open">
-        <div class="popup-body popup-body-password-chng open">
+      <div class="popup popup-password-chng">
+        <div class="popup-body popup-body-password-chng">
           <div class="popup-header">
             <div class="loading-title">
               Changing password
@@ -1686,8 +1686,22 @@
           </div>
         </div>
       </div>
-      <div class="popup popup-avatar-chng">
-        <div id="avatar" class="popup-body popup-body-avatar">
+      <div class="popup popup-delete-world">
+        <div class="popup-body popup-body-delete-world">
+          <div class="popup-header">
+            <div class="delete-world-title">
+              Do you really want <br>to delete this world?
+            </div>
+            <div class="close-popup">
+            </div>
+          </div>
+          <div class="button popup-button delete-world-button">
+            <a href="#" class="btn popup-btn delete-world-btn"><span>Yes</span></a>
+          </div>
+        </div>
+      </div>
+      <div class="popup popup-avatar-chng open">
+        <div id="avatar" class="popup-body popup-body-avatar open">
           <div class="popup-header">
             <div class="loading-title">
               Test your avatar
@@ -2018,7 +2032,7 @@
         </div>
       </div>
       <div class="popup popup-enter-world">
-        <div class="popup-body">
+        <div class="popup-body popup-body-enter-world">
           <div class="popup-header">
             <div class="loading-title">
               Meta World
@@ -2032,7 +2046,7 @@
           <div class="enter-world-preview">
             <img src="./img/grid-worlds/img7.jpg" alt="">
             <div class="preview-enter">
-              <a href="#">
+              <a href="#"> ENTER THE WORLD
                 <img src="./img/start-world.svg" alt="">
               </a>
             </div>
@@ -2062,7 +2076,7 @@
           <div class="enter-world-preview">
             <img src="./img/grid-worlds/img7.jpg" alt="">
             <div class="preview-enter">
-              <a href="#">
+              <a href="#"> ENTER THE WORLD
                 <img src="./img/start-world.svg" alt="">
               </a>
             </div>
@@ -2084,7 +2098,7 @@
               <a href="#" class="btn enter-world-btn"><span>Set preview</span></a>
             </div>
             <div class="button enter-world-button">
-              <a href="#" class="btn enter-world-btn"><span>Disable quest link</span></a>
+              <a href="#" class="link-disable btn enter-world-btn"><span>Disable quest access</span></a>
             </div>
             <div class="button enter-world-button">
               <a href="#" class="btn enter-world-btn"><span>Delete</span></a>
@@ -2124,10 +2138,10 @@
           <div class="button inside-settings-button">
             <a href="#" class="btn inside-settings-btn"><span>Leave world</span></a>
           </div>
+          <div class="button inside-settings-button">
+            <a href="#" class="btn inside-settings-btn"><span>License info</span></a>
+          </div>
           <div class="inside-settings-master-buttons master-buttons">
-            <div class="button inside-settings-button">
-              <a href="#" class="btn inside-settings-btn"><span>License info</span></a>
-            </div>
             <div class="button inside-settings-button">
               <a href="#" class="btn inside-settings-btn"><span>Room logs</span></a>
             </div>
@@ -2166,10 +2180,10 @@
           <div class="button inside-settings-button">
             <a href="#" class="btn inside-settings-btn"><span>Leave world</span></a>
           </div>
+          <div class="button inside-settings-button">
+            <a href="#" class="btn inside-settings-btn"><span>License info</span></a>
+          </div>
           <div class="inside-settings-master-buttons master-buttons">
-            <div class="button inside-settings-button">
-              <a href="#" class="btn inside-settings-btn"><span>License info</span></a>
-            </div>
             <div class="button inside-settings-button">
               <a href="#" class="btn inside-settings-btn"><span>Room logs</span></a>
             </div>
@@ -2189,6 +2203,32 @@
           <div class="data-input data-input-convert">
             <input type="text" class="input" placeholder=" ">
             <label class="input-label" for="">Template name</label>
+          </div>
+          <div class="data-input data-input-convert">
+            <input type="text" class="input" placeholder=" ">
+            <label class="input-label" for="">Description</label>
+          </div>
+          <div class="data-input data-input-convert">
+            <input type="text" class="input" placeholder=" ">
+            <label class="input-label" for="">Tags (separate with commas)</label>
+          </div>
+          <div class="button convert-button">
+            <a href="#" class="btn convert-btn"><span>OK</span></a>
+          </div>
+        </div>
+      </div>
+      <div class="popup popup-properties">
+        <div class="popup-body popup-body-properties">
+          <div class="popup-header">
+            <div class="convert-title">
+              Edit properties
+            </div>
+            <div class="close-popup">
+            </div>
+          </div>
+          <div class="data-input data-input-convert">
+            <input type="text" class="input" placeholder=" ">
+            <label class="input-label" for="">Name</label>
           </div>
           <div class="data-input data-input-convert">
             <input type="text" class="input" placeholder=" ">
@@ -2231,6 +2271,137 @@
           </div>
         </div>
       </div>
+      <div class="popup popup-redirecting">
+        <div class="popup-body popup-body-redirecting">
+          <div class="popup-header">
+            <div class="loading-title">
+              Redirecting to main page
+            </div>
+          </div>
+          <div class="loading-animation">
+            <div class="wave"></div>
+            <div class="wave"></div>
+            <div class="wave"></div>
+            <div class="wave"></div>
+            <div class="wave"></div>
+            <div class="wave"></div>
+            <div class="wave"></div>
+            <div class="wave"></div>
+            <div class="wave"></div>
+            <div class="wave"></div>
+          </div>
+        </div>
+      </div>
+      <div class="popup popup-license">
+        <div class="popup-body popup-body-license">
+          <div class="popup-header">
+            <div class="loading-title">
+              License info
+            </div>
+            <div class="close-popup">
+            </div>
+          </div>
+          <div class="license-spoilers">
+            <div class="license-tab">
+              <input type="checkbox" name="acc1" id="acc1">
+              <label for="acc1">
+                  <div class="license-number">
+                      01
+                  </div>
+                  <div class="license-title">
+                      Art Gallery License
+                  </div>
+              </label>
+              <div class="license-text">
+                  <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Odit quasi omnis eligendi aliquid labore explicabo tempora deserunt ad sed maiores! Facilis dicta officia voluptas perferendis sint, dolores enim obcaecati accusamus eos autem ducimus atque ipsam saepe nam quia, suscipit libero modi, nulla error tenetur! Doloremque, praesentium! Animi officiis id assumenda!</p>
+              </div>
+          </div>
+            <div class="license-tab">
+              <input type="checkbox" name="acc2" id="acc2">
+              <label for="acc2">
+                  <div class="license-number">
+                      02
+                  </div>
+                  <div class="license-title">
+                      Art License
+                  </div>
+              </label>
+              <div class="license-text">
+                  <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Odit quasi omnis eligendi aliquid labore explicabo tempora deserunt ad sed maiores! Facilis dicta officia voluptas perferendis sint, dolores enim obcaecati accusamus eos autem ducimus atque ipsam saepe nam quia, suscipit libero modi, nulla error tenetur! Doloremque, praesentium! Animi officiis id assumenda!</p>
+              </div>
+          </div>
+            <div class="license-tab">
+              <input type="checkbox" name="acc3" id="acc3">
+              <label for="acc3">
+                  <div class="license-number">
+                      03
+                  </div>
+                  <div class="license-title">
+                      Museum License
+                  </div>
+              </label>
+              <div class="license-text">
+                  <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Odit quasi omnis eligendi aliquid labore explicabo tempora deserunt ad sed maiores! Facilis dicta officia voluptas perferendis sint, dolores enim obcaecati accusamus eos autem ducimus atque ipsam saepe nam quia, suscipit libero modi, nulla error tenetur! Doloremque, praesentium! Animi officiis id assumenda!</p>
+              </div>
+          </div>
+            <div class="license-tab">
+              <input type="checkbox" name="acc4" id="acc4">
+              <label for="acc4">
+                  <div class="license-number">
+                      04
+                  </div>
+                  <div class="license-title">
+                      World License
+                  </div>
+              </label>
+              <div class="license-text">
+                  <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Odit quasi omnis eligendi aliquid labore explicabo tempora deserunt ad sed maiores! Facilis dicta officia voluptas perferendis sint, dolores enim obcaecati accusamus eos autem ducimus atque ipsam saepe nam quia, suscipit libero modi, nulla error tenetur! Doloremque, praesentium! Animi officiis id assumenda!</p>
+              </div>
+          </div>
+          </div>
+        </div>
+      </div>
+      <div class="popup popup-logs">
+        <div class="popup-body popup-body-logs">
+          <div class="popup-header">
+            <div class="loading-title">
+              Room logs
+            </div>
+            <div class="close-popup">
+            </div>
+          </div>
+          <div class="logs-content">
+            <textarea name="logs" id=""></textarea>
+          </div>
+        </div>
+      </div>
+      <div class="popup popup-change-preview">
+        <div class="popup-body popup-body-change-preview">
+          <div class="popup-header">
+            <div class="loading-title">
+              Upload preview
+            </div>
+            <div class="close-popup">
+            </div>
+          </div>
+          <div class="change-preview-title">
+            <span>20 actors demo</span>
+          </div>
+          <div class="changed-preview">
+            <img src="./img/grid-worlds/img7.jpg" alt="">
+          </div>
+          <div class="file-upload">
+            <input id="upload" type="file" accept="image/jpg, image/png, image/jpeg" class="input-file">
+            <label for="upload" class="btn input-file-btn">
+              <span class="input-file-btn-text">Upload new preview image</span>
+            </label>
+          </div>
+          <div class="button change-preview-button">
+            <a href="#" class="btn change-preview-btn"><span>Confirm</span></a>
+          </div>
+        </div>
+      </div>
+    </div>
     </div>
     <footer class="footer">
       <div class="container footer-container">
