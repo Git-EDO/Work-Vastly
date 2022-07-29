@@ -111,6 +111,19 @@ for (i=0; i<copyBtns.length; i++) {
   })
 }
 
+// Изменение кнопки запрета приглашающей ссылки
+
+let disableBtns = document.querySelectorAll('.link-disable span');
+
+for (i=0; i<disableBtns.length; i++) {
+  disableBtn = disableBtns[i];
+  disableBtn.addEventListener('click', function(e) {
+    e.target.innerHTML = "Link disabled!"
+    e.target.closest('.btn').classList.add('disabled');
+    e.preventDefault();
+  })
+}
+
 // POPUPS
 
 let closePopupIcons = document.querySelectorAll('.close-popup');
@@ -222,3 +235,18 @@ const swiper = new Swiper('.swiper', {
 }
 
 });
+
+
+// Управление спойлерами лицензий
+
+let spoilersTitle = document.querySelectorAll('.spoiler-title');
+
+
+if(spoilersTitle.length>0) {
+  for(i=0;i<spoilersTitle.length;i++) {
+    spoilerTitle = spoilersTitle[i];
+    spoilerTitle.addEventListener('click',function(e) {
+      e.target.classList.toggle('active');
+    })
+  }
+}
