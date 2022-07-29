@@ -2,7 +2,6 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-
 }
 
 /* === COLORS === */
@@ -18,7 +17,7 @@
 }
 
 body {
-  font-family: 'Syne', sans-serif;
+  font-family: 'Space Grotesk', sans-serif;
   color: var(--main-color);
   font-size: 14px;
   font-weight: 400;
@@ -86,6 +85,7 @@ a {
   top: 13px;
   z-index: 1;
   transition: 0.5s ease-in-out;
+  pointer-events: none;
 }
 .input {
   background: none;
@@ -188,6 +188,7 @@ a {
   border-radius: 50px;
   cursor: pointer;
   outline: none;
+  background-color: #f9f9f9;
   border: 1px solid var(--bg-color);
   box-shadow: inset 0 0 0 0 #fff;
 }
@@ -232,7 +233,7 @@ a {
 .popup.open {
   visibility: visible;
   opacity: 1;
-  background-color: rgba(0,0,0,0.2);
+  background-color: rgba(0,0,0,0.75);
 }
 .popup-header {
   display: flex;
@@ -240,6 +241,7 @@ a {
   align-items: center;
   padding: 0 20px;
   font-weight: 500;
+  line-height: 120%;
   font-size: 20px;
   width: 100%;
   height: 70px;
@@ -1043,11 +1045,18 @@ transition: 0.5s ease;
 /* === AVATAR CHANGING === */
 
 .popup-body-avatar {
+  width: 60vw;
+  height: 70vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
 }
 .avatar-control {
   display: flex;
-  margin-top: 70px;
-  height: 300px;
+  width: 100%;
+  height: 100%;
+  margin-top: 60px;
+  overflow: hidden;
 }
 .avatar-actions {
   display: flex;
@@ -1056,6 +1065,7 @@ transition: 0.5s ease;
   margin-left: 10px;
   padding-right: 10px;
   overflow-y: auto;
+  min-width: 80px;
 }
 .avatar-actions::-webkit-scrollbar {
   width: 5px;
@@ -1071,11 +1081,12 @@ transition: 0.5s ease;
 }
 .avatar-body {
   border: 1px solid var(--bg-color);
-  min-width: 200px;
+  width: 100%;
   height: 100%;
   border-radius: 5px;
   position: relative;
   cursor: pointer;
+  flex: 1 1 50%;
 }
 .avatar-body img {
   display: block;
@@ -1091,6 +1102,7 @@ transition: 0.5s ease;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  height: 100%;
 }
 .checkbox-label {
   font-size: 16px;
@@ -1098,7 +1110,7 @@ transition: 0.5s ease;
   line-height: 120%;
 }
 .avatar-chng-button {
-  display: inline-flex;
+  margin-top: 0px;
 }
 .avatar-chng-button a {
   margin-top: 20px;
@@ -1156,9 +1168,15 @@ transition: 0.5s ease;
 
 .popup-enter-world {
 }
+.popup-body-enter-world {
+  width: 30vw;
+  height: 60vh;
+  justify-content: flex-start;
+  min-height: 500px;
+}
 .enter-world-title {
   margin-top: 70px;
-  font-size: 20px;
+  font-size: 24px;
   font-weight: 500;
   line-height: 130%;
   text-transform: uppercase;
@@ -1166,12 +1184,13 @@ transition: 0.5s ease;
   text-align: center;
 }
 .enter-world-preview {
-  width: 100%;
+  width: 90%;
   min-height: 200px;
   border-radius: 5px 5px 0 0;
   border: 1px solid var(--bg-color);
   position: relative;
   overflow: hidden;
+  flex: 1 1;
 }
 .enter-world-preview img {
   width: 100%;
@@ -1182,10 +1201,9 @@ transition: 0.5s ease;
   left: 0;
 }
 .enter-world-preview:hover .preview-enter {
-  transform: translateY(0);
+  background-color: rgba(255,255,255,0.8);
 }
 .preview-enter {
-  transform: translateY(100%);
   position: absolute;
   top: 0;
   left: 0;
@@ -1199,13 +1217,18 @@ transition: 0.5s ease;
 }
 .preview-enter a {
   position: relative;
-  width: 70px;
-  height: 70px;
+  width: 120px;
+  height: 120px;
+  font-size: 16px;
+  font-weight: 700;
+  text-align: center;
 }
 .preview-enter a:hover img {
   opacity: 1;
 }
 .preview-enter img {
+  margin-top: 30px;
+  margin-bottom: 50px;
   position: absolute;
   top: 0;
   left: 0;
@@ -1218,6 +1241,10 @@ transition: 0.5s ease;
   margin-top: 10px;
 }
 .popup-body-master {
+  width: 30vw;
+  height: 60vh;
+  justify-content: flex-start;
+  min-height: 500px;
   transition: 0.5s ease;
 }
 .enter-world-btn {
@@ -1654,7 +1681,7 @@ transition: 0.5s ease;
   line-height: 120%;
 }
 .voice-check {
-  margin-top: 10px;
+  margin-top: 20px;
 }
 .sound-check {
   width: 100%;
@@ -1677,6 +1704,7 @@ transition: 0.5s ease;
   flex-direction: column;
   justify-content: space-between;
   gap: 10px;
+  margin-top: 10px;
 }
 .extra-checkbox {
   display: flex;
@@ -2298,6 +2326,7 @@ transition: 0.5s ease;
   height: 30px;
   border-radius: 50%;
   flex: 0 0;
+  margin-top: 10px;
 }
 .users-avatar img {
   object-fit: cover;
@@ -2305,11 +2334,19 @@ transition: 0.5s ease;
   height: 100%;
 }
 .users-text {
+  display: flex;
+  flex-direction: column;
   margin-left: 10px;
   padding: 5px;
   background-color: #f9f9f9;
   border-radius: 5px;
   line-height: 150%;
+}
+.user-author {
+  font-weight: 700;
+}
+.user-author:after {
+  content: ':';
 }
 .my-message {
   display: flex;
@@ -2633,6 +2670,7 @@ transition: 0.5s ease;
   .search-radio-label {
   top: 7px;
   left: 3px;
+  font-size: 12px;
   }
   .user-dropdown {
     width: 280px;
