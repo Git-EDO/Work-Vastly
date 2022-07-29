@@ -32,7 +32,7 @@ if(footerScroll) {
 
 // Количество миров
 
-let worlds = document.querySelectorAll('.worlds-grid-item');
+// let worlds = document.querySelectorAll('.worlds-grid-item');
 
 // Управление формой регистрации
 
@@ -105,10 +105,46 @@ let copyBtns = document.querySelectorAll('.link-copy span');
 for (i=0; i<copyBtns.length; i++) {
   copyBtn = copyBtns[i];
   copyBtn.addEventListener('click', function(e) {
-    copyBtn.innerHTML = "Link copied!";
-    copyBtn.closest('.btn').classList.add('copied');
+    e.target.innerHTML = "Link copied!"
+    e.target.closest('.btn').classList.add('copied');
     e.preventDefault();
   })
+}
+
+// POPUPS
+
+let closePopupIcons = document.querySelectorAll('.close-popup');
+
+if (closePopupIcons.length>0){
+  for (i=0;i<closePopupIcons.length;i++){
+    closePopupIcon = closePopupIcons[i];
+    closePopupIcon.addEventListener('click', function(e){
+      e.target.closest('.popup').classList.remove('open');
+      e.target.closest('.popup-body').classList.remove('open');
+      body.classList.remove('lock');
+      e.preventDefault();
+    })
+  }
+};
+
+let openPopupBtns = document.querySelectorAll('.open-popup');
+let popups = document.querySelectorAll('.popup');
+let body = document.querySelector('body');
+
+if(openPopupBtns.length>0){
+  for(i=0;i<openPopupBtns.length;i++){
+    openPopupBtn = openPopupBtns[i];
+    openPopupBtn.addEventListener('click', function(e){
+      let popupName = e.target.getAttribute('href').replace('#','');
+      console.log(popupName)
+      let currentPopup = document.getElementById(popupName);
+      console.log(currentPopup)
+      document.getElementById(popupName).classList.add('open');
+      currentPopup.closest('.popup').classList.add('open');
+      body.classList.add('lock');
+      e.preventDefault();
+    })
+  }
 }
 
 // Master settings
@@ -117,30 +153,38 @@ let masterBtns = document.querySelectorAll('.master-settings');
 
 for (i=0; i < masterBtns.length; i++) {
   masterBtn = masterBtns[i];
-  masterBtn.addEventListener('click', function(e){
+  masterBtn.addEventListener('click', function(e) {
+    e.target.classList.toggle('active');
     let masterContents = document.querySelectorAll('.master-buttons');
     for (i=0; i < masterBtns.length; i++) {
       masterContent = masterContents[i];
+      masterContent.classList.toggle('active');
     }
-    masterContent.classList.toggle('active');
-    masterBtn.classList.toggle('active');
   })
 }
 
-let microOff = document.querySelector('.micro');
+// Включение/отключение камеры/микрофона
 
-if (microOff) {
-  microOff.addEventListener('click', function(){
-    microOff.classList.toggle('off');
-  })
+let microOff = document.querySelectorAll('.micro');
+
+if (microOff.length > 0) {
+  for (i=0;i<microOff.length;i++) {
+    microOffBtn = microOff[i];
+    microOffBtn.addEventListener('click', function(e){
+      e.target.closest('.micro').classList.toggle('off');
+    })
+  }
 }
 
-let cameraOff = document.querySelector('.camera');
+let cameraOff = document.querySelectorAll('.camera');
 
-if (cameraOff) {
-  cameraOff.addEventListener('click', function(){
-    cameraOff.classList.toggle('off');
-  })
+if (cameraOff.length > 0) {
+  for (i=0;i<cameraOff.length;i++) {
+    cameraOffBtn = cameraOff[i];
+    cameraOffBtn.addEventListener('click', function(e){
+      e.target.closest('.camera').classList.toggle('off');
+    })
+  }
 }
 
 // Скрытие интерфейса внутри мира
@@ -178,5 +222,3 @@ const swiper = new Swiper('.swiper', {
 }
 
 });
-
-Swiper.slideTo(2,false,false);
