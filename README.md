@@ -41,6 +41,7 @@ https://git-edo.github.io/Work-Vastly/interface.html
 - https://git-edo.github.io/Work-Vastly/loading-world.html
 - https://git-edo.github.io/Work-Vastly/properties.html
 - https://git-edo.github.io/Work-Vastly/upload-preview.html
+- https://git-edo.github.io/Work-Vastly/redirecting.html
 
 
 
