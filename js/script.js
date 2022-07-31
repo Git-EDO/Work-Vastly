@@ -30,10 +30,6 @@ if(footerScroll) {
   });
 }
 
-// Количество миров
-
-// let worlds = document.querySelectorAll('.worlds-grid-item');
-
 // Управление формой регистрации
 
 let regSwitch = document.querySelector('.register-switch');
@@ -196,6 +192,17 @@ if (cameraOff.length > 0) {
     cameraOffBtn = cameraOff[i];
     cameraOffBtn.addEventListener('click', function(e){
       e.target.closest('.camera').classList.toggle('off');
+    })
+  }
+}
+
+let chatOff = document.querySelectorAll('.chat');
+
+if (chatOff.length > 0) {
+  for (i=0;i<chatOff.length;i++) {
+    chatOffBtn = chatOff[i];
+    chatOffBtn.addEventListener('click', function(e){
+      e.target.closest('.chat').classList.toggle('off');
     })
   }
 }

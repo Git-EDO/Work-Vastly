@@ -1288,7 +1288,7 @@ transition: 0.5s ease;
 .popup-body-inside-settings .master-settings {
   margin-left: 0;
 }
-.micro {
+.chat {
   width: 25px;
   height: 25px;
   background-color: #fff;
@@ -1297,6 +1297,34 @@ transition: 0.5s ease;
   cursor: pointer;
   transition: 0.5s ease;
   margin-left: auto;
+  margin-right: 15px;
+}
+.chat img {
+  position: absolute;
+  top: 3px;
+  left: 2.5px;
+}
+.chat:after {
+  width: 0px;
+}
+.chat.off:after {
+  content: '';
+  position: absolute;
+  top: 11px;
+  right: 0px;
+  background-color: var(--main-color);
+  height: 3px;
+  width: 25px;
+  transform: rotate(-45deg);
+}
+.micro {
+  width: 25px;
+  height: 25px;
+  background-color: #fff;
+  border-radius: 5px;
+  position: relative;
+  cursor: pointer;
+  transition: 0.5s ease;
   margin-right: 15px;
 }
 .micro img {
@@ -1363,6 +1391,18 @@ transition: 0.5s ease;
   display: block;
   visibility: visible;
   opacity: 1;
+}
+.popup-inside-settings-master .chat {
+  margin-right: 10px;
+}
+.popup-inside-settings-master .micro {
+  margin-right: 10px;
+}
+.popup-inside-settings-master .camera {
+  margin-right: 10px;
+}
+.popup-inside-settings-master .master-settings {
+  margin-right: 10px;
 }
 
 /* === SELECT ROOM === */
@@ -2116,6 +2156,7 @@ transition: 0.5s ease;
   background-color: var(--main-color);
 }
 
+
 /* === CONTROLLER === */
 
 .interface-controller {
@@ -2143,22 +2184,15 @@ transition: 0.5s ease;
   background-color: #212529;
   border-radius: 50%;
 }
-.small-circle:after {
-  content: '';
+.small-circle:active .moving-arrow {
+  opacity: 1;
+}
+.moving-arrow {
   position: absolute;
-  width: 8px;
-  height: 8px;
-  border: 2px solid var(--bg-color);
-  border-top: 2px solid transparent;
-  border-right: 2px solid transparent;
+  opacity: 0.5;
 }
 .small-circle:hover {
   transform: scale(1.5);
-}
-.small-circle:active:after {
-  border: 2px solid #fff;
-  border-top: 2px solid transparent;
-  border-right: 2px solid transparent;
 }
 .top {
   left: 50px;
@@ -2166,40 +2200,40 @@ transition: 0.5s ease;
   transition: 0.5s ease;
   position: relative;
 }
-.top:after {
-  top: 35px;
-  left: 19px;
-  transform: rotate(135deg);
+.top .moving-arrow {
+  top: 25px;
+  left: 15px;
 }
 .right {
   top: 50px;
   right: -25px;
   transition: 0.5s ease;
 }
-.right:after {
-  top: 19px;
-  right: 35px;
-  transform: rotate(225deg);
+.right .moving-arrow {
+  right: 25px;
+  top: 15px;
+  transform: rotate(90deg);
 }
 .bottom {
   left: 50px;
   bottom: -25px;
   transition: 0.5s ease;
 }
-.bottom:after {
-  bottom: 35px;
-  right: 19px;
-  transform: rotate(-45deg);
+.bottom .moving-arrow {
+  bottom: 25px;
+  left: 15px;
+  transform: rotate(180deg);
 }
 .left {
   top: 50px;
   left: -25px;
   transition: 0.5s ease;
 }
-.left:after {
-  left: 35px;
-  top: 19px;
-  transform: rotate(45deg);
+.left .moving-arrow {
+  left: 25px;
+  top: 15px;
+  transform: rotate(-90deg);
+  transition: 0.5s ease;
 }
 .center {
   position: absolute;
@@ -2399,6 +2433,25 @@ transition: 0.5s ease;
 .hide:hover {
   opacity: 1;
 }
+.hide-desktop {
+  position: absolute;
+  right: 10px;
+  top: 20px;
+  cursor: pointer;
+  opacity: 0.6;
+  transition: 0.5s ease;
+  z-index: 1000;
+}
+.hide-desktop:after {
+  position: absolute;
+  content: '';
+  width: 4px;
+  height: 4px;
+  background-color: #e76f51;
+  border-radius: 50%;
+  top: 8px;
+  right: 6px;
+}
 
 /* === INTERFACE CAMERA === */
 
@@ -2480,6 +2533,15 @@ transition: 0.5s ease;
   .hide {
     display: block;
   }
+  .hide-desktop {
+    display: none;
+  }
+  .chat {
+    display: none;
+  }
+  .micro {
+    margin-left: auto;
+  }
   .container {
     max-width: 990px;
   }
@@ -2550,6 +2612,18 @@ transition: 0.5s ease;
   }
   .settings-input {
     width: 100%;
+  }
+  .popup-inside-settings-master .chat {
+    margin-right: 15px;
+  }
+  .popup-inside-settings-master .micro {
+    margin-right: 15px;
+  }
+  .popup-inside-settings-master .camera {
+    margin-right: 15px;
+  }
+  .popup-inside-settings-master .master-settings {
+    margin-right: 15px;
   }
 }
 @media screen and (max-width: 768px) {
